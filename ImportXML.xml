@@ -1,0 +1,30 @@
+﻿<Employees>
+  <Employee>
+    <EmpId>101</EmpId>
+    <FirstName>Sardor</FirstName>
+    <LastName>Nosirov</LastName>
+    <Email>sarikn@gmail.com</Email>
+    <Salary>500.00</Salary>
+    <NumOfWorkingHours>10</NumOfWorkingHours>
+    <ExperienceYear>2</ExperienceYear>
+    <DateOfBirth>2000-03-20T22:06:00</DateOfBirth>
+  </Employee>
+  <Employee>
+    <EmpId>102</EmpId>
+    <FirstName>Doston</FirstName>
+    <LastName>Saydullaev</LastName>
+    <Email>dostonsadi@gmail.com</Email>
+    <Salary>350.00</Salary>
+    <NumOfWorkingHours>16</NumOfWorkingHours>
+    <ExperienceYear>2</ExperienceYear>
+    <DateOfBirth>2000-03-01T18:06:00</DateOfBirth>
+  </Employee>
+  <Employee>
+    <EmpId>103</EmpId>
+    <FirstName>Akbar</FirstName>
+    <LastName>Ali</LastName>
+    <Email>akiali@gmail.com</Email>
+    <Salary>300.00</Salary>
+    <NumOfWorkingHours>14</NumOfWorkingHours>
+  </Employee>
+</Employees>

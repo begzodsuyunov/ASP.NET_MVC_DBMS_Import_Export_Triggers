@@ -1,0 +1,192 @@
+﻿@model DBSD_CW2.Models.EmpFilteringViewModel
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+@{
+    ViewData["Title"] = "Searching";
+}
+<h2>Export</h2>
+<div>
+    <form asp-action="ExportingXml">
+        <input asp-for="FirstName" class="form-control" type="hidden" />
+        <input asp-for="LastName" class="form-control" type="hidden" />
+        <input asp-for="Email" class="form-control" type="hidden" />
+        <input asp-for="Salary" class="form-control" type="hidden" />
+        <input asp-for="NumOfWorkingHours" class="form-control" type="hidden" />
+        <input type="submit" value="XML" class="btn btn-primary" />
+    </form>
+    <br>
+    <form asp-action="ExportAsJSON">
+        <input asp-for="FirstName" class="form-control" type="hidden" />
+        <input asp-for="LastName" class="form-control" type="hidden" />
+        <input asp-for="Email" class="form-control" type="hidden" />
+        <input asp-for="Salary" class="form-control" type="hidden" />
+        <input asp-for="NumOfWorkingHours" class="form-control" type="hidden" />
+        <input type="submit" value="JSON" class="btn btn-primary" />
+    </form>
+    <br>
+    <form asp-action="ExportAsCSV">
+         <input asp-for="FirstName" class="form-control" type="hidden"/>
+         <input asp-for="LastName" class="form-control" type="hidden"/>
+         <input asp-for="Email" class="form-control" type="hidden"/>
+         <input asp-for="Salary" class="form-control" type="hidden"/>
+         <input asp-for="NumOfWorkingHours" class="form-control" type="hidden"/>
+         <input type="submit" value="CSV" class="btn btn-primary" />
+     </form>
+</div>
+
+
+<h1>Searching</h1>
+
+<h4>EmpFilteringViewModel</h4>
+<hr />
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Searching">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumOfWorkingHours" class="control-label"></label>
+                <input asp-for="NumOfWorkingHours" class="form-control" />
+                <span asp-validation-for="NumOfWorkingHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().EmpID)
+            </th>
+            <th>
+                @Html.ActionLink(
+                    @Html.DisplayNameFor(model => model.Employees.First().FirstName),
+                    "Searching", new { sortColumn = "FirstName", sortDirection = ViewBag.SortDirection })
+
+            </th>
+            <th>
+                @Html.ActionLink(
+                @Html.DisplayNameFor(model => model.Employees.First().LastName),
+                "Searching", new { sortColumn = "LastName", sortDirection = ViewBag.SortDirection })
+            </th>
+            <th>
+                @Html.ActionLink(
+                                @Html.DisplayNameFor(model => model.Employees.First().Email),
+                                "Searching", new { sortColumn = "Email", sortDirection = ViewBag.SortDirection })
+            </th>
+            <th>
+                @Html.ActionLink(
+                                @Html.DisplayNameFor(model => model.Employees.First().Salary),
+                                "Searching", new { sortColumn = "Salary", sortDirection = ViewBag.SortDirection })
+            </th>
+            <th>
+
+                @Html.ActionLink(
+                @Html.DisplayNameFor(model => model.Employees.First().NumOfWorkingHours),
+                "Searching", new { sortColumn = "NumOfWorkingHours", sortDirection = ViewBag.SortDirection })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().ExperienceYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().NumberOfStudents)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.First().Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employees)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfWorkingHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExperienceYear)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.NumberOfStudents)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Name)
+            </th>
+            <td>
+                @Html.ActionLink("Details", "DetailsFiltered", new { id = item.EmpID })
+            </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <div>
+            @Html.ActionLink(
+                                           "Previous",
+                                           "Searching", new { page = (ViewBag.CurrentPage ?? 1) - 1 })
+            @Html.ActionLink(
+                                           "Next",
+                                           "Searching", new { page = (ViewBag.CurrentPage ?? 1) + 1 })
+        </div>
+
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @Html.PagedListPager(Model.Employees, page => Url.Action("Searching", new { page = page }))

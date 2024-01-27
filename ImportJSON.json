@@ -1,0 +1,29 @@
+[
+  {
+    "EmpId": 54,
+    "FirstName": "Jake",
+    "LastName": "brown",
+    "Email": "jakebrow22@gmail.com",
+    "Salary": 500.00,
+    "NumOfWorkingHours": 10,
+    "ExperienceYear": 2
+  },
+  {
+    "EmpId": 55,
+    "FirstName": "Alex",
+    "LastName": "Wilson",
+    "Email": "wilalex2@gmail.com",
+    "Salary": 350.00,
+    "NumOfWorkingHours": 16,
+    "ExperienceYear": 2
+  },
+  {
+    "EmpId": 56,
+    "FirstName": "Anna",
+    "LastName": "Smith",
+    "Email": "annsmith22@gmail.com",
+    "Salary": 300.00,
+    "NumOfWorkingHours": 14,
+    "ExperienceYear": 2
+  }
+]
